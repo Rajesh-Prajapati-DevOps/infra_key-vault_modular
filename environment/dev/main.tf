@@ -6,3 +6,7 @@ module "virtual_network" {
   source              = "../../Module/virtual_network"
  vnet_config = var.vnet_config_kvr
 }
+module "subnet" {
+  source        = "../../Module/subnet"
+  subnet_config = var.subnet_config_kvr
+}

@@ -6,14 +6,14 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "kannu_rg"
-    storage_account_name = "kannukastorage"
-    container_name       = "backendstorage"
+    resource_group_name  = "kannu-rg"
+    storage_account_name = "prajapatistg"
+    container_name       = "backendstorage1"
     key                  = "key-vault.tfstate"
   }
 
 }
 provider "azurerm" {
   features {}
-  subscription_id = "987e5914-628e-4e9a-8c8f-d7fa87735002"
+  subscription_id = "716491cb-e2f6-4c7c-846f-b7d135de9a1e"
 }
