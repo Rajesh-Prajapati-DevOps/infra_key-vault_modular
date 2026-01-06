@@ -8,5 +8,13 @@ module "virtual_network" {
 }
 module "subnet" {
   source        = "../../Module/subnet"
+  depends_on = [ module.virtual_network ]
   subnet_config = var.subnet_config_kvr
+}
+module "public_ip" {
+  source        = "../../Module/Public_IP"
+  public_ip_config = var.public_ip_config_kvr
+}
+output "public_ip" {
+  value = module.public_ip.public_ip
 }
