@@ -1,3 +1,3 @@
-output "public_ip" {
-  value = azurerm_public_ip.pip
+output "public_ip_id" {
+  value = { for k, v in azurerm_public_ip.pip : k => v.id }
 }
