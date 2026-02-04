@@ -24,3 +24,10 @@ module "network_interface_card" {
   subnet_ids    = module.subnet.subnet_id
   public_ip_ids = module.public_ip.public_ip_id
 }
+module "vm" {
+  source = "../../Module/Virtual_machine"
+  depends_on = [ module.subnet,module.public_ip,module.network_interface_card,module.virtual_network ]
+
+  vm_config = var.vm_config
+  nic_ids   = module.network_interface_card.nic_id
+}
